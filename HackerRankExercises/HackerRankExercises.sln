@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRankExercises", "HackerRankExercises\HackerRankExercises.csproj", "{C1DA316E-33C9-400E-BB73-182A8FFA63B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewProblem", "InterviewProblem\InterviewProblem.csproj", "{AB01796F-559A-4672-BF24-43DA6B893E2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1DA316E-33C9-400E-BB73-182A8FFA63B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1DA316E-33C9-400E-BB73-182A8FFA63B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1DA316E-33C9-400E-BB73-182A8FFA63B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1DA316E-33C9-400E-BB73-182A8FFA63B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB01796F-559A-4672-BF24-43DA6B893E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB01796F-559A-4672-BF24-43DA6B893E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB01796F-559A-4672-BF24-43DA6B893E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB01796F-559A-4672-BF24-43DA6B893E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D751827-A51F-4DFE-B44C-38BB6263F5D4}
+	EndGlobalSection
+EndGlobal
