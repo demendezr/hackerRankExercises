@@ -1,0 +1,21 @@
+﻿******************
+Problem
+******************
+Given an array of integers, create a method that does the following:
+
+1. Get the weights of each element of the array
+2. Build a response array with the numbers from the input array but in descending order
+according to the weight of each element of the input array
+3. Return the response array
+
+Example:
+Input = [123, 89, 12, 67, 43] // input array
+Weights = [6, 17, 3, 13, 7] // weights of each element of the input array
+Output = [12, 123, 43, 67, 89] // output array
+
+Conditions:
+- It can be done in any programming language and IDE.
+- Everything must be done from scratch.
+- Time to complete the exercise: 15 minutes.
+- The time starts to run from the moment the IDE is open.
+- Share the screen and explain everything that is developing.
