@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,70 +31,106 @@ namespace HackerRankExercises
          */
         public static void matrixRotation(List<List<int>> matrix, int r)
         {
+            Stopwatch stopwatchMain = new Stopwatch();
+            Stopwatch stopwatch = new Stopwatch();
+            Stopwatch stopwatch1 = new Stopwatch();
+            Stopwatch stopwatch2 = new Stopwatch();
+            Stopwatch stopwatch3 = new Stopwatch();
+            Stopwatch stopwatch4 = new Stopwatch();
+            Stopwatch stopwatch5 = new Stopwatch();
+
+            stopwatchMain.Start();   
+
+
+            stopwatch.Start();
+
             int m = matrix.Count; // rows 5
             int n = matrix[0].Count; // cols 4
 
             int layers = Math.Min(m, n) / 2;
+            stopwatch.Stop();
+            
 
             for (int i = 0; i < layers; i++)
             {
-                while (r > 0)
+                int colNumber = n - i - 1;
+                int rowNumber = m - i - 1;
+
+                for (int rotations = r; rotations > 0; rotations--)
                 {
+                    stopwatch1.Start();
                     //clockwise
-                    for (int j = i; j < n - i - 1; j++)
+                    List<int> row = matrix[i];
+                    for (int j = i; j < colNumber; j++)
                     {
-                        int temp = matrix[i][j];
-                        matrix[i][j] = matrix[i][j + 1];
-                        matrix[i][j + 1] = temp;
+                        int temp = row[j];
+                        row[j] = row[j + 1];
+                        row[j + 1] = temp;                        
                     }
+                    matrix[i] = row;
+                    stopwatch1.Stop();
+                    
+
+                    stopwatch2.Start();
                     // Rotate right column
-                    for (int j = i; j < m - i - 1; j++)
+                    for (int j = i; j < rowNumber; j++)
                     {
-                        int temp = matrix[j][n - i - 1];
-                        matrix[j][n - i - 1] = matrix[j + 1][n - i - 1];
-                        matrix[j + 1][n - i - 1] = temp;
+                        int temp = matrix[j][colNumber];
+                        matrix[j][colNumber] = matrix[j + 1][colNumber];
+                        matrix[j + 1][colNumber] = temp;
                     }
+                    stopwatch2.Stop();
+                    
+
+                    stopwatch3.Start();
                     // Rotate bottom row
-                    for (int j = n - i - 1; j > i; j--)
+                    row = matrix[rowNumber];
+                    for (int j = colNumber; j > i; j--)
                     {
-                        int temp = matrix[m - i - 1][j];
-                        matrix[m - i - 1][j] = matrix[m - i - 1][j - 1];
-                        matrix[m - i - 1][j - 1] = temp;
+                        int temp = row[j];
+                        row[j] = row[j - 1];
+                        row[j - 1] = temp;
                     }
+                    matrix[rowNumber] = row;
+                    stopwatch3.Stop();
+                    
+
+                    stopwatch4.Start();
                     // Rotate left column
-                    for (int j = m - i - 1; j > i + 1; j--)
+                    for (int j = rowNumber; j > i + 1; j--)
                     {
                         int temp = matrix[j][i];
                         matrix[j][i] = matrix[j - 1][i];
                         matrix[j - 1][i] = temp;
                     }
-
-                    r--;
+                    stopwatch4.Stop();                    
                 }
             }
 
+            stopwatch5.Start();
             // Output final matrix
-            for (int i = 0; i < m; i++)
+            foreach(var row in matrix)
             {
-                for (int j = 0; j < n; j++)
-                {
-                    Console.Write($"{matrix[i][j]} ");
-                }
-                Console.WriteLine("");
+                Console.WriteLine(string.Join(" ", row.ToArray())); 
             }
+            stopwatch5.Stop();
+
+            stopwatchMain.Stop();
+
+            Console.WriteLine("Get layers: {0} ms", stopwatch.ElapsedMilliseconds);
+            Console.WriteLine("Clockwise: {0} ms", stopwatch1.ElapsedMilliseconds);
+            Console.WriteLine("Rotate right column: {0} ms", stopwatch2.ElapsedMilliseconds);
+            Console.WriteLine("Rotate bottom: {0} ms", stopwatch3.ElapsedMilliseconds);
+            Console.WriteLine("Rotate left column: {0} ms", stopwatch4.ElapsedMilliseconds);
+            Console.WriteLine("Output final matrix: {0} ms", stopwatch5.ElapsedMilliseconds);
+            Console.WriteLine("TOTAL: {0} ms", stopwatchMain.ElapsedMilliseconds);
         }
 
         public static void Execute()
         {
-            /* Example:
-                5 4 7
-                1 2 3 4
-                7 8 9 10
-                13 14 15 16
-                19 20 21 22
-                25 26 27 28
-             */
-            int r = 7;
+            // Small sample:
+
+            /*int r = 7;
             List<List<int>> matrix = new List<List<int>>()
             {
                 new List<int>(){ 1,2,3,4 },
@@ -100,7 +138,22 @@ namespace HackerRankExercises
                 new List<int>(){ 13,14,15,16 },
                 new List<int>(){ 19,20,21,22 },
                 new List<int>(){ 25,26,27,28 },
-            };
+            };*/
+
+            // Large sample reading from the text file MatrixLayerRotationInput.txt
+            int r = 7865;
+            List<List<int>> matrix = new List<List<int>>();
+            foreach (string line in File.ReadLines(@"C:\Users\Daniel-Kriptos\Documents\Visual Studio 2022\Projects\GitHub\hackerRankExercises\HackerRankExercises\HackerRankExercises\MatrixLayerRotationInput.txt"))
+            {
+                string[] vals = line.Split(new char[] { ' ' });
+
+                List<int> ints = new List<int>();
+                for(int i=0;i<vals.Length;i++)
+                {
+                    ints.Add(int.Parse(vals[i]));
+                }
+                matrix.Add(ints);
+            }
 
             Console.WriteLine($"RESULT Matrix Layer Rotation:");
             matrixRotation(matrix, r);
