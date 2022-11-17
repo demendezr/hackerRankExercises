@@ -22,9 +22,13 @@ MatrixLayerRotation.Execute();
 
 #region A Very Big Sum
 AVeryBigSum.Execute();
-#endregion*/
+#endregion
 
 #region Plus Minus
 PlusMinus.Execute();
+#endregion*/
+
+#region Diagonal Difference
+DiagonalDifference.Execute();
 #endregion
 Console.WriteLine("END!");
