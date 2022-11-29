@@ -26,9 +26,14 @@ AVeryBigSum.Execute();
 
 #region Plus Minus
 PlusMinus.Execute();
-#endregion*/
+#endregion
 
 #region Diagonal Difference
 DiagonalDifference.Execute();
+#endregion
+*/
+
+#region Staircase
+Staircase.Execute();
 #endregion
 Console.WriteLine("END!");
