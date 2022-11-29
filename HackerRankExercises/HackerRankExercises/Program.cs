@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using HackerRankExercises;
+using HackerRankExercises.Arrays;
 
 Console.WriteLine("START!");
 /*
@@ -31,9 +32,12 @@ PlusMinus.Execute();
 #region Diagonal Difference
 DiagonalDifference.Execute();
 #endregion
-*/
 
 #region Staircase
 Staircase.Execute();
+#endregion*/
+
+#region Left Rotation
+LeftRotation.Execute();
 #endregion
 Console.WriteLine("END!");
