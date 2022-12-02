@@ -35,9 +35,13 @@ DiagonalDifference.Execute();
 
 #region Staircase
 Staircase.Execute();
-#endregion*/
+#endregion
 
 #region Left Rotation
 LeftRotation.Execute();
+#endregion*/
+
+#region Mini Max Sum
+MiniMaxSum.Execute();
 #endregion
 Console.WriteLine("END!");
