@@ -39,9 +39,13 @@ Staircase.Execute();
 
 #region Left Rotation
 LeftRotation.Execute();
-#endregion*/
+#endregion
 
 #region Mini Max Sum
 MiniMaxSum.Execute();
+#endregion*/
+
+#region Maximum Element
+MaximumElement.Execute();
 #endregion
 Console.WriteLine("END!");
