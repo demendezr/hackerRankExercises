@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using HackerRankExercises;
+using HackerRankExercises.Algorithms;
 using HackerRankExercises.Arrays;
 
 Console.WriteLine("START!");
@@ -46,6 +47,30 @@ MiniMaxSum.Execute();
 #endregion*/
 
 #region Maximum Element
-MaximumElement.Execute();
+//MaximumElement.Execute();
+#endregion
+
+#region Birthday Cake Candles
+//BirthdayCakeCandles.Execute();
+#endregion
+
+#region Time Conversion
+//TimeConversion.Execute();
+#endregion
+
+#region Grading Students
+//GradingStudents.Execute();
+#endregion
+
+#region Apple and Orange
+//AppleAndOrange.Execute();
+#endregion
+
+#region Number Line Jumps
+//NumberLineJumps.Execute();
+#endregion
+
+#region Between Two Sets
+BetweenTwoSets.Execute();
 #endregion
 Console.WriteLine("END!");
